@@ -23,7 +23,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "@/redux/slice/authSlice";
 import { Button } from "@/components/ui/button";
 
-function App() {
+const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -646,6 +646,6 @@ function App() {
       </footer>
     </div>
   );
-}
+};
 
-export default App;
+export default Home;

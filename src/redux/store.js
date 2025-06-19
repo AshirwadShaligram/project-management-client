@@ -1,6 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./slice/authSlice";
+import projectReducer from "./slice/projectSlice";
+import issueReducer from "./slice/issueSlice";
+import attachmentReducer from "./slice/attachmentSlice";
+import commentReducer from "./slice/commentSlice";
 import { persistReducer, persistStore } from "redux-persist";
 
 // Persist config
@@ -12,6 +16,10 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  project: projectReducer,
+  issue: issueReducer,
+  attachment: attachmentReducer,
+  comment: commentReducer,
 });
 
 // Create persisted reducer

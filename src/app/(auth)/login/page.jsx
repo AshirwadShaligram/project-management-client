@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Mail, Lock, Eye, EyeOff } from "lucide-react"; // Import Eye icons
+import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import AuthLayout from "@/components/AuthLayout";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";

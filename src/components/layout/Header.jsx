@@ -5,10 +5,8 @@ import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { useSelector } from "react-redux";
 
-export default function Header({ title, subtitle }) {
+const Header = ({ title, subtitle }) => {
   const user = useSelector((state) => state.auth.user);
-  console.log("Header auth: ", user);
-
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between">
@@ -20,29 +18,25 @@ export default function Header({ title, subtitle }) {
         </div>
 
         <div className="flex items-center space-x-4">
-          {/* Quick Actions */}
-          <Button variant="outline" size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Create Issue
-          </Button>
-
-          {/* Notifications */}
+          {/* Notifications
           <Button variant="ghost" size="sm" className="relative">
             <Bell className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full text-white flex items-center justify-center">
               3
             </span>
-          </Button>
+          </Button> */}
 
           {/* User Menu */}
           <div className="flex items-center space-x-3">
             <Avatar className="h-8 w-8">
               <AvatarImage src={user?.avatar} />
-              <AvatarFallback>{user?.name}</AvatarFallback>
+              <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
             </Avatar>
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;
