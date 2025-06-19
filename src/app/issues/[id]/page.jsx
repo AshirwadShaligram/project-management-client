@@ -307,7 +307,7 @@ const IssueDetail = () => {
                     </div>
                   )}
 
-                  {/* Existing Comments - Use Redux state instead of currentIssue.comments */}
+                  {/* Existing Comments  */}
                   {currentIssueComments.map((comment) => (
                     <div key={comment._id} className="flex space-x-3">
                       <Avatar className="h-8 w-8">

@@ -90,7 +90,7 @@ const Dashboard = () => {
         }
       });
 
-      // Fetch issues for the first 3 projects only (for dashboard display)
+      // Fetch issues for the first 3 projects only
       projects.slice(0, 3).forEach((project) => {
         if (!projectIssues[project._id]) {
           dispatch(getProjectIssues({ projectId: project._id }));

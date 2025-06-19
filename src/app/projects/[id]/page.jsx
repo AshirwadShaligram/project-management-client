@@ -26,7 +26,6 @@ const ProjectDetail = () => {
   const [filters, setFilters] = useState({});
   const [createIssueOpen, setCreateIssueOpen] = useState(false);
 
-  // Redux state
   const {
     currentProject,
     loading: projectLoading,

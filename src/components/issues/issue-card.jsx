@@ -13,7 +13,7 @@ const IssueCard = ({ issue, showProject = false, isDragging = false }) => {
 
   // Ensure issue and issue._id exist
   if (!issue || !issue._id) {
-    return null; // or return a placeholder card
+    return null;
   }
 
   return (
@@ -34,11 +34,6 @@ const IssueCard = ({ issue, showProject = false, isDragging = false }) => {
               </span>
               <PriorityBadge priority={issue.priority} />
             </div>
-            {/* {isHovered && (
-              <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
-                <MoreHorizontal className="h-3 w-3" />
-              </Button>
-            )} */}
           </div>
 
           {/* Title */}

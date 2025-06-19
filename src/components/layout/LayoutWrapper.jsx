@@ -1,13 +1,21 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 export const LayoutWrapper = ({ children }) => {
   const pathname = usePathname();
-  const noLayoutRoutes = ["/login", "/register", "/"];
-  const showLayout = !noLayoutRoutes.includes(pathname);
+  const noLayoutRoutes = [
+    "/login",
+    "/register",
+    "/",
+    "/forgot-password",
+    "/reset-password",
+  ];
+  // Check if the path starts with any of the noLayoutRoutes
+  const showLayout = !noLayoutRoutes.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`)
+  );
 
   return showLayout ? (
     <div className="min-h-screen flex  md:flex-row bg-background">

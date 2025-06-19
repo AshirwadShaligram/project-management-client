@@ -326,7 +326,7 @@ const Projects = () => {
               <p className="text-gray-600 mb-6">
                 Get started by creating your first project.
               </p>
-              <Button>
+              <Button onClick={() => setCreateProjectOpen(true)}>
                 <Plus className="h-4 w-4 mr-2" />
                 Create Project
               </Button>

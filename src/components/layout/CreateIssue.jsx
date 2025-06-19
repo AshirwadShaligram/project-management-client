@@ -139,11 +139,11 @@ const CreateIssue = ({ project, open, onOpenChange }) => {
               <Label htmlFor="assignee">Assignee</Label>
               <Select
                 name="assignee"
-                value={formData.assignee || ""} // Use empty string if null
+                value={formData.assignee || ""}
                 onValueChange={(value) =>
                   setFormData((prev) => ({
                     ...prev,
-                    assignee: value || null, // Convert empty string to null
+                    assignee: value || null,
                   }))
                 }
               >

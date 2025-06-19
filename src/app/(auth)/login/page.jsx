@@ -14,7 +14,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const router = useRouter();

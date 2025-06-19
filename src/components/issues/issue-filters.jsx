@@ -44,7 +44,6 @@ const IssueFilters = ({ onFiltersChange, projectId }) => {
     return acc;
   }, []);
 
-  // Also include the current user if not already in the list
   if (user && !projectAssignees.find((assignee) => assignee._id === user._id)) {
     projectAssignees.push(user);
   }
@@ -54,14 +53,13 @@ const IssueFilters = ({ onFiltersChange, projectId }) => {
     setFilters(updated);
     onFiltersChange(updated);
 
-    // Dispatch action to fetch filtered issues
     if (projectId) {
       dispatch(
         getProjectIssues({
           projectId,
           filters: {
             ...updated,
-            page: 1, // Reset to first page when filters change
+            page: 1,
             limit: 10,
           },
         })
@@ -108,7 +106,7 @@ const IssueFilters = ({ onFiltersChange, projectId }) => {
     return statusMap[status] || status;
   };
 
-  // Helper function to get display name for priority
+  // get display name for priority
   const getPriorityDisplayName = (priority) => {
     return priority.charAt(0).toUpperCase() + priority.slice(1);
   };

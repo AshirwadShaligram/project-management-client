@@ -18,10 +18,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getProjects } from "@/redux/slice/projectSlice";
-import {
-  getMyAssignedIssues,
-  getProjectIssues,
-} from "@/redux/slice/issueSlice";
+import { getProjectIssues } from "@/redux/slice/issueSlice";
 import { inviteMember } from "@/redux/slice/projectSlice";
 import {
   Dialog,
@@ -119,8 +116,7 @@ export default function Team() {
 
   const handleInviteMember = async () => {
     if (!selectedProject || !email) {
-      toast.error({
-        description: "Please select a project and enter an email address",
+      toast.error("Please select a project and enter an email address", {
         variant: "destructive",
       });
       return;
@@ -136,16 +132,14 @@ export default function Team() {
         })
       ).unwrap();
 
-      toast.success({
-        description: "Invitation sent successfully",
-      });
+      toast.success("Invitation sent successfully");
       setIsInviteModalOpen(false);
       setEmail("");
       setRole("developer");
       setSelectedProject("");
     } catch (error) {
-      toast.error({
-        description: error || "Failed to send invitation",
+      toast.error("Failed to send invitation", {
+        description: error,
         variant: "destructive",
       });
     } finally {

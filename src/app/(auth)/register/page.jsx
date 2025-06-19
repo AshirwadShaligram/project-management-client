@@ -37,7 +37,7 @@ const Register = () => {
     (state) => state.auth
   );
 
-  // Password validation requirements
+  // Password validation
   const passwordRequirements = {
     length: formData.password.length >= 8,
     uppercase: /[A-Z]/.test(formData.password),
@@ -60,12 +60,11 @@ const Register = () => {
     }
   }, [error]);
 
-  // Clear error when component mounts
   useEffect(() => {
     dispatch(clearAuthError());
   }, [dispatch]);
 
-  // Handle registration success
+  // registration success
   useEffect(() => {
     if (isAuthenticated) {
       toast.success("Registration successful!");
@@ -123,7 +122,6 @@ const Register = () => {
     if (!validateForm()) return;
 
     try {
-      // Dispatch register action with form data
       await dispatch(
         registerUser({
           name: formData.name,
