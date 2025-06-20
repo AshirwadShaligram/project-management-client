@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎯 Project Management App – Frontend
 
-## Getting Started
+A modern, responsive web interface for managing projects, tickets, and teams—built using **Next.js 15**, **Redux Toolkit**, **Tailwind CSS**, and **Radix UI**. Designed for seamless collaboration and productivity, this frontend connects to a RESTful backend to provide a real-time project management experience.
 
-First, run the development server:
+🌐 **Live Frontend URL**: [https://project-management-client-lake.vercel.app](https://project-management-client-lake.vercel.app)
+
+---
+
+## ✨ Features
+
+- 🧑‍💼 User Authentication and Session Management
+- 🗂️ Project and Ticket Management UI
+- 🧭 Kanban Board Interface (To Do / In Progress / Done)
+- 🎨 Dark/Light Theme Toggle with `next-themes`
+- ⚛️ Global State Management with Redux Toolkit + Persist
+- 📆 Date Management with `date-fns`
+- 📦 API Integration using Axios
+- 💬 Toast Notifications via `sonner`
+- 🧩 Beautiful Components using Radix UI + Lucide Icons
+
+---
+
+## 🧰 Tech Stack
+
+- **Next.js 15**
+- **React 19**
+- **Redux Toolkit + Redux Persist**
+- **Tailwind CSS v4**
+- **Radix UI** (for accessible components)
+- **Lucide React** (icons)
+- **Axios** (API handling)
+- **next-themes** (theme switching)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/project-management-app.git
+cd project-management-app/client
 ```
+### 2. Install Dependencies
+```bash
+npm install
+```
+### 3. Set Up Environment Variables
+Create a .env.local file in the root of the frontend and add:
+```env
+NEXT_PUBLIC_API_BASE_URL=https://project-management-server-t25s.onrender.com
+Replace with your actual backend API URL if different.
+```
+### 4. Run the App Locally
+```bash
+npm run dev
+```
+Open http://localhost:3000 in your browser to view the app.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📁 Folder Structure (Simplified)
+```lua
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+client/
+├── app/
+│   ├── page.tsx (Home)
+│   └── ...
+├── components/
+│   ├── ui/
+│   └── common/
+├── redux/
+│   ├── store.ts
+│   └── slices/
+├── public/
+├── tailwind.config.js
+├── .env.local
+└── package.json
+```
+### 📦 Dependencies
+```json
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+{
+  "next": "15.3.3",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "@reduxjs/toolkit": "^2.8.2",
+  "react-redux": "^9.2.0",
+  "redux-persist": "^6.0.0",
+  "axios": "^1.9.0",
+  "tailwindcss": "^4",
+  "next-themes": "^0.4.6",
+  "lucide-react": "^0.513.0",
+  "sonner": "^2.0.5",
+  "radix-ui": "...",
+  "date-fns": "^4.1.0"
+}
+```
+### 🔗 API Connection
+All requests are made to the backend hosted at:
 
-## Learn More
+```arduino
+https://project-management-server-t25s.onrender.com
+```
+Ensure CORS is properly configured on the backend to accept requests from the Vercel frontend URL.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 👥 Contributing
+Pull requests and suggestions are welcome. Please open issues for bugs or feature requests before starting a major change.
